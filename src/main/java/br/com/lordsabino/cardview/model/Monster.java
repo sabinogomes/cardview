@@ -2,7 +2,7 @@ package br.com.lordsabino.cardview.model;
 
 import java.util.Objects;
 
-public class Monster {
+public class Monster implements Card {
 
     private Long id;
     private String name;
