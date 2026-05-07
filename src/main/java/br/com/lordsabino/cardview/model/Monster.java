@@ -19,7 +19,6 @@ public class Monster implements Card {
     }
 
     public Monster(
-            Long id,
             String name,
             String attribute,
             String types,
@@ -30,8 +29,7 @@ public class Monster implements Card {
             String statuses,
             String description
     ) {
-        this.setId(id);
-        this.setName(name);
+        this.name = name;
         this.attribute = attribute;
         this.types = types;
         this.level = level;
@@ -72,54 +70,22 @@ public class Monster implements Card {
         );
     }
 
-    public void setId(Long id) {
-        if (id == null || id <= 0) {
-            throw new IllegalArgumentException("Id must be positive and not null");
-        }
-        this.id = id;
-    }
-
-    public void setName(String name) {
-        if (name == null || name.isBlank()) {
-            throw new IllegalArgumentException("Name cannot be null or blank");
-        }
-        this.name = name;
-    }
-
-    public void setLevel(int level) {
-        if (level <= 0) {
-            throw new IllegalArgumentException("Level cannot be zero or negative");
-        }
-        this.level = level;
-    }
-
-    public void setAttack(int attack) {
-        if (attack < 0) {
-            throw new IllegalArgumentException("Attack cannot be negative");
-        }
-        this.attack = attack;
-    }
-
-    public void setDefense(int defense) {
-        if (defense < 0) {
-            throw new IllegalArgumentException("Defense cannot be negative");
-        }
-        this.defense = defense;
-    }
-
-    public void setPasscode(String passcode) {
-        if (passcode == null || passcode.isBlank()) {
-            throw new IllegalArgumentException("Passcode cannot be null or blank");
-        }
-        this.passcode = passcode;
-    }
-
+    @Override
     public Long getId() {
         return id;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    @Override
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getAttribute() {
@@ -142,16 +108,33 @@ public class Monster implements Card {
         return level;
     }
 
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
     public int getAttack() {
         return attack;
+    }
+
+    public void setAttack(int attack) {
+        this.attack = attack;
     }
 
     public int getDefense() {
         return defense;
     }
 
+    public void setDefense(int defense) {
+        this.defense = defense;
+    }
+
+    @Override
     public String getPasscode() {
         return passcode;
+    }
+
+    public void setPasscode(String passcode) {
+        this.passcode = passcode;
     }
 
     public String getStatuses() {

@@ -16,7 +16,6 @@ public class MagicTrap implements Card {
     }
 
     public MagicTrap(
-            Long id,
             String name,
             String cardType,
             String property,
@@ -24,11 +23,10 @@ public class MagicTrap implements Card {
             String statuses,
             String description
     ) {
-        this.setId(id);
-        this.setName(name);
+        this.name = name;
         this.cardType = cardType;
         this.property = property;
-        this.setPasscode(passcode);
+        this.passcode = passcode;
         this.statuses = statuses;
         this.description = description;
     }
@@ -57,81 +55,63 @@ public class MagicTrap implements Card {
         );
     }
 
-    public void setId(Long id) {
-        if (id == null || id <= 0) {
-            throw new IllegalArgumentException("Id must be positive and not null");
-        }
-        this.id = id;
-    }
-
-    public void setName(String name) {
-        if (name == null || name.isBlank()) {
-            throw new IllegalArgumentException("Name cannot be null or blank");
-        }
-        this.name = name;
-    }
-
-    public void setCardType(String cardType) {
-        if (cardType == null || cardType.isBlank()) {
-            throw new IllegalArgumentException("CardType cannot be null or blank");
-        }
-        this.cardType = cardType;
-    }
-
-    public void setProperty(String property) {
-        if (property == null || property.isBlank()) {
-            throw new IllegalArgumentException("Property cannot be null or blank");
-        }
-        this.property = property;
-    }
-
-    public void setPasscode(String passcode) {
-        if (passcode == null || passcode.isBlank()) {
-            throw new IllegalArgumentException("Passcode cannot be null or blank");
-        }
-        this.passcode = passcode;
-    }
-
-    public void setStatuses(String statuses) {
-        if (statuses == null || statuses.isBlank()) {
-            throw new IllegalArgumentException("Statuses cannot be null or blank");
-        }
-        this.statuses = statuses;
-    }
-
-    public void setDescription(String description) {
-        if (description == null || description.isBlank()) {
-            throw new IllegalArgumentException("Description cannot be null or blank");
-        }
-        this.description = description;
-    }
-
+    @Override
     public Long getId() {
         return id;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    @Override
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getCardType() {
         return cardType;
     }
 
+    public void setCardType(String cardType) {
+        this.cardType = cardType;
+    }
+
     public String getProperty() {
         return property;
     }
 
+    public void setProperty(String property) {
+        this.property = property;
+    }
+
+    @Override
     public String getPasscode() {
         return passcode;
+    }
+
+    public void setPasscode(String passcode) {
+        this.passcode = passcode;
     }
 
     public String getStatuses() {
         return statuses;
     }
 
+    public void setStatuses(String statuses) {
+        this.statuses = statuses;
+    }
+
     public String getDescription() {
         return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @Override

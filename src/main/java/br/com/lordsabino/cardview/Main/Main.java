@@ -13,7 +13,6 @@ public class Main {
     public static void main(String[] args) {
 
         Monster darkMagician = new Monster(
-                1L,
                 "Dark Magician",
                 "DARK",
                 "Spellcaster/Normal",
@@ -26,7 +25,6 @@ public class Main {
         );
 
         Monster darkMagicianGirl = new Monster(
-                2L,
                 "Dark Magician Girl",
                 "DARK",
                 "Spellcaster/Normal",
@@ -39,7 +37,6 @@ public class Main {
         );
 
         Monster magicianOfBlackChaos = new Monster(
-                3L,
                 "Magician of Black Chaos",
                 "DARK",
                 "Spellcaster/Normal",
@@ -52,7 +49,6 @@ public class Main {
         );
 
         MagicTrap darkRenewal  = new MagicTrap(
-                4L,
                 "Dark Renewal",
                 "Trap",
                 "Normal",
@@ -67,7 +63,6 @@ public class Main {
                 );
 
         MagicTrap darkMagicCurtain = new MagicTrap(
-                5L,
                 "Dark Magic Curtain",
                 "Spell",
                 "Normal",
@@ -80,7 +75,6 @@ public class Main {
         );
 
         MagicTrap spellbindingCircle = new MagicTrap(
-                6L,
                 "Spellbinding Circle",
                 "Trap",
                 "Continuous",
