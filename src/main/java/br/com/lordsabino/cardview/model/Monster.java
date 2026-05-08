@@ -155,19 +155,12 @@ public class Monster implements Card {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
         if (!(o instanceof Monster monster)) return false;
-        if (this.id != null && monster.id != null) {
-            return Objects.equals(this.id, monster.id);
-        }
-
-        return Objects.equals(this.passcode, monster.passcode);
+        return Objects.equals(passcode, monster.passcode);
     }
 
     @Override
     public int hashCode() {
-        return (id != null)
-                ? Objects.hash(id)
-                : Objects.hash(passcode);
+        return Objects.hashCode(passcode);
     }
 }
