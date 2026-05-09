@@ -105,8 +105,6 @@ public class Main {
         Supplier<List<Card>> allCards = () -> Arrays.asList(darkMagician, darkMagicianGirl, spellbindingCircle);
         System.out.println(allCards.get());
 
-        System.out.println(" ===== Print card on deck ====");
-
 
 
     }
