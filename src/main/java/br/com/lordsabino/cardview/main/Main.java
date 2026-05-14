@@ -2,17 +2,13 @@ package br.com.lordsabino.cardview.main;
 
 import br.com.lordsabino.cardview.model.Card;
 import br.com.lordsabino.cardview.model.CardStat;
-import br.com.lordsabino.cardview.model.MagicTrap;
+import br.com.lordsabino.cardview.model.SpellTrap;
 import br.com.lordsabino.cardview.model.Monster;
-import br.com.lordsabino.cardview.model.enums.Attribute;
-import br.com.lordsabino.cardview.model.enums.Statuses;
-import br.com.lordsabino.cardview.model.enums.Types;
+import br.com.lordsabino.cardview.model.enums.*;
 
-import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.function.Supplier;
 
 public class Main {
 
@@ -54,12 +50,12 @@ public class Main {
                 "You can Ritual Summon this card with \"Black Magic Ritual\"."
         );
 
-        MagicTrap darkRenewal  = new MagicTrap(
+        SpellTrap darkRenewal  = new SpellTrap(
                 "Dark Renewal",
-                "Trap",
-                "Normal",
+                SpellTrapType.TRAP,
+                SpellTrapProperty.NORMAL,
                 "09287078",
-                "Unlimited",
+                Statuses.UNLIMITED,
                 """
                          When your opponent Normal or Special Summons a monster(s):
                          Target 1 of those monsters and 1 Spellcaster monster you control;
@@ -68,24 +64,24 @@ public class Main {
                         """
                 );
 
-        MagicTrap darkMagicCurtain = new MagicTrap(
+        SpellTrap darkMagicCurtain = new SpellTrap(
                 "Dark Magic Curtain",
-                "Spell",
-                "Normal",
+                SpellTrapType.SPELL,
+                SpellTrapProperty.NORMAL,
                 "99789342",
-                "Unlimited",
+                Statuses.UNLIMITED,
                 """
                           Pay half your LP; Special Summon 1 "Dark Magician" from your Deck. You cannot Summon other
                           monsters the turn you activate this card (but you can Set).
                 """
         );
 
-        MagicTrap spellbindingCircle = new MagicTrap(
+        SpellTrap spellbindingCircle = new SpellTrap(
                 "Spellbinding Circle",
-                "Trap",
-                "Continuous",
+                SpellTrapType.TRAP,
+                SpellTrapProperty.CONTINUOUS,
                 "18807108",
-                "Unlimited",
+                Statuses.UNLIMITED,
                 """
                          Activate this card by targeting 1 monster your opponent controls; it cannot attack or change
                          its battle position. When that monster is destroyed, destroy this card.
@@ -108,13 +104,13 @@ public class Main {
         );
 
 
-        System.out.println(" ===== Search By Name =====");
+        System.out.println("===== Search By Name =====");
         cards.forEach(card -> System.out.println(card.getName()));
 
-        System.out.println(" ===== Print All Cards =====");
+        System.out.println("\n===== Print All Cards =====");
         cards.forEach(System.out::println);
 
-        System.out.println(" ===== Filter Cards By Attack Great than 2500 =====");
+        System.out.println("\n===== Filter Cards By Attack Great than 2500 =====");
         monsters.stream()
                 .filter(monster -> monster.getAttack() >= 2500)
                 .forEach(System.out::println);

@@ -1,26 +1,30 @@
 package br.com.lordsabino.cardview.model;
 
+import br.com.lordsabino.cardview.model.enums.SpellTrapProperty;
+import br.com.lordsabino.cardview.model.enums.SpellTrapType;
+import br.com.lordsabino.cardview.model.enums.Statuses;
+
 import java.util.Objects;
 
-public class MagicTrap implements Card {
+public class SpellTrap implements Card {
 
     private Long id;
     private String name;
-    private String cardType;
-    private String property;
+    private SpellTrapType cardType;
+    private SpellTrapProperty property;
     private String passcode;
-    private String statuses;
+    private Statuses statuses;
     private String description;
 
-    public MagicTrap() {
+    public SpellTrap() {
     }
 
-    public MagicTrap(
+    public SpellTrap(
             String name,
-            String cardType,
-            String property,
+            SpellTrapType cardType,
+            SpellTrapProperty property,
             String passcode,
-            String statuses,
+            Statuses statuses,
             String description
     ) {
         this.name = name;
@@ -34,7 +38,6 @@ public class MagicTrap implements Card {
     @Override
     public String toString() {
         String format = """
-                ID: %s
                 Name: %s
                 Card Type: %s
                 Property: %s
@@ -45,7 +48,6 @@ public class MagicTrap implements Card {
 
         return String.format(
                 format,
-                id,
                 name,
                 cardType,
                 property,
@@ -73,19 +75,19 @@ public class MagicTrap implements Card {
         this.name = name;
     }
 
-    public String getCardType() {
+    public SpellTrapType getCardType() {
         return cardType;
     }
 
-    public void setCardType(String cardType) {
+    public void setCardType(SpellTrapType cardType) {
         this.cardType = cardType;
     }
 
-    public String getProperty() {
+    public SpellTrapProperty getProperty() {
         return property;
     }
 
-    public void setProperty(String property) {
+    public void setProperty(SpellTrapProperty property) {
         this.property = property;
     }
 
@@ -98,11 +100,11 @@ public class MagicTrap implements Card {
         this.passcode = passcode;
     }
 
-    public String getStatuses() {
+    public Statuses getStatuses() {
         return statuses;
     }
 
-    public void setStatuses(String statuses) {
+    public void setStatuses(Statuses statuses) {
         this.statuses = statuses;
     }
 
@@ -116,7 +118,7 @@ public class MagicTrap implements Card {
 
     @Override
     public boolean equals(Object o) {
-        if (!(o instanceof MagicTrap magicTrap)) return false;
+        if (!(o instanceof SpellTrap magicTrap)) return false;
         return Objects.equals(passcode, magicTrap.passcode);
     }
 
