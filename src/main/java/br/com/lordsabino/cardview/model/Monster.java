@@ -1,18 +1,23 @@
 package br.com.lordsabino.cardview.model;
 
-import java.util.Objects;
+import br.com.lordsabino.cardview.model.enums.Attribute;
+import br.com.lordsabino.cardview.model.enums.Statuses;
+import br.com.lordsabino.cardview.model.enums.Types;
 
-public class Monster implements Card {
+import java.util.Objects;
+import java.util.Set;
+
+public class Monster implements CardStat {
 
     private Long id;
     private String name;
-    private String attribute;
-    private String types;
+    private Attribute attribute;
+    private Set<Types> types;
     private int level;
     private int attack;
     private int defense;
     private String passcode;
-    private String statuses;
+    private Statuses statuses;
     private String description;
 
     public Monster() {
@@ -20,13 +25,13 @@ public class Monster implements Card {
 
     public Monster(
             String name,
-            String attribute,
-            String types,
+            Attribute attribute,
+            Set<Types> types,
             int level,
             int attack,
             int defense,
             String passcode,
-            String statuses,
+            Statuses statuses,
             String description
     ) {
         this.name = name;
@@ -43,7 +48,6 @@ public class Monster implements Card {
     @Override
     public String toString() {
         String format = """
-                ID: %s
                 Name: %s
                 Attribute: %s
                 Types: %s
@@ -57,7 +61,6 @@ public class Monster implements Card {
 
         return String.format(
                 format,
-                id,
                 name,
                 attribute,
                 types,
@@ -88,19 +91,19 @@ public class Monster implements Card {
         this.name = name;
     }
 
-    public String getAttribute() {
+    public Attribute getAttribute() {
         return attribute;
     }
 
-    public void setAttribute(String attribute) {
+    public void setAttribute(Attribute attribute) {
         this.attribute = attribute;
     }
 
-    public String getTypes() {
+    public Set<Types> getTypes() {
         return types;
     }
 
-    public void setTypes(String types) {
+    public void setTypes(Set<Types> types) {
         this.types = types;
     }
 
@@ -137,11 +140,11 @@ public class Monster implements Card {
         this.passcode = passcode;
     }
 
-    public String getStatuses() {
+    public Statuses getStatuses() {
         return statuses;
     }
 
-    public void setStatuses(String statuses) {
+    public void setStatuses(Statuses statuses) {
         this.statuses = statuses;
     }
 

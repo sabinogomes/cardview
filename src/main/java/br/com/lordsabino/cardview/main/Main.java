@@ -1,11 +1,17 @@
-package br.com.lordsabino.cardview.Main;
+package br.com.lordsabino.cardview.main;
 
 import br.com.lordsabino.cardview.model.Card;
+import br.com.lordsabino.cardview.model.CardStat;
 import br.com.lordsabino.cardview.model.MagicTrap;
 import br.com.lordsabino.cardview.model.Monster;
+import br.com.lordsabino.cardview.model.enums.Attribute;
+import br.com.lordsabino.cardview.model.enums.Statuses;
+import br.com.lordsabino.cardview.model.enums.Types;
 
 import java.util.Arrays;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.function.Supplier;
 
 public class Main {
@@ -14,37 +20,37 @@ public class Main {
 
         Monster darkMagician = new Monster(
                 "Dark Magician",
-                "DARK",
-                "Spellcaster/Normal",
+                Attribute.DARK,
+                new LinkedHashSet<>(Set.of(Types.SPELLCASTER, Types.NORMAL)),
                 7,
                 2500,
                 2100,
                 "46986414",
-                "Unlimited",
+                Statuses.UNLIMITED,
                 "The ultimate wizard in terms of attack and defense."
         );
 
         Monster darkMagicianGirl = new Monster(
                 "Dark Magician Girl",
-                "DARK",
-                "Spellcaster/Normal",
+                Attribute.DARK,
+                new LinkedHashSet<>(Set.of(Types.SPELLCASTER, Types.EFFECT)),
                 6,
                 2000,
                 1700,
                 "38033121",
-                "Unlimited",
+                Statuses.UNLIMITED,
                 "Gains 300 ATK for every \"Dark Magician\" or \"Magician of Black Chaos\" in the GY."
         );
 
         Monster magicianOfBlackChaos = new Monster(
                 "Magician of Black Chaos",
-                "DARK",
-                "Spellcaster/Normal",
+                Attribute.DARK,
+                new LinkedHashSet<>(Set.of(Types.SPELLCASTER, Types.RITUAL)),
                 8,
                 2800,
                 2600,
                 "30208479",
-                "Unlimited",
+                Statuses.UNLIMITED,
                 "You can Ritual Summon this card with \"Black Magic Ritual\"."
         );
 
@@ -95,15 +101,23 @@ public class Main {
                 spellbindingCircle
         );
 
+        List<CardStat> monsters = List.of(
+                darkMagician,
+                darkMagicianGirl,
+                magicianOfBlackChaos
+        );
+
+
         System.out.println(" ===== Search By Name =====");
         cards.forEach(card -> System.out.println(card.getName()));
 
-        System.out.println(" ===== Show All Cards =====");
+        System.out.println(" ===== Print All Cards =====");
         cards.forEach(System.out::println);
 
-        System.out.println(" ===== Supplier =====");
-        Supplier<List<Card>> allCards = () -> Arrays.asList(darkMagician, darkMagicianGirl, spellbindingCircle);
-        System.out.println(allCards.get());
+        System.out.println(" ===== Filter Cards By Attack Great than 2500 =====");
+        monsters.stream()
+                .filter(monster -> monster.getAttack() >= 2500)
+                .forEach(System.out::println);
 
 
 

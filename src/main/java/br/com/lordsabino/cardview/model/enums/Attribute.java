@@ -1,4 +1,4 @@
-package br.com.lordsabino.cardview.model.enuns;
+package br.com.lordsabino.cardview.model.enums;
 
 public enum Attribute {
     DARK,

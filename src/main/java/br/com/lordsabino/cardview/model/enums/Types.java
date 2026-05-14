@@ -1,4 +1,4 @@
-package br.com.lordsabino.cardview.model.enuns;
+package br.com.lordsabino.cardview.model.enums;
 
 public enum Types {
     AQUA,
@@ -22,5 +22,10 @@ public enum Types {
     WARRIOR,
     WINGED_BEAST,
     WYRM,
-    ZOMBIE
+    ZOMBIE,
+    NORMAL,
+    EFFECT,
+    RITUAL,
+    FUSION,
+    XYZ
 }
