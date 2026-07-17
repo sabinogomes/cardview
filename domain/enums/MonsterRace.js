@@ -1,0 +1,30 @@
+const MonsterRace = Object.freeze({
+  SPELLCASTER: Symbol("SPELLCASTER"),
+  WARRIOR: Symbol("WARRIOR"),
+  DRAGON: Symbol("DRAGON"),
+  FIEND: Symbol("FIEND"),
+  FAIRY: Symbol("FAIRY"),
+  BEAST: Symbol("BEAST"),
+  BEAST_WARRIOR: Symbol("BEAST_WARRIOR"),
+  WINGED_BEAST: Symbol("WINGED_BEAST"),
+  ZOMBIE: Symbol("ZOMBIE"),
+  MACHINE: Symbol("MACHINE"),
+  ROCK: Symbol("ROCK"),
+  PYRO: Symbol("PYRO"),
+  AQUA: Symbol("AQUA"),
+  FISH: Symbol("FISH"),
+  SEA_SERPENT: Symbol("SEA_SERPENT"),
+  REPTILE: Symbol("REPTILE"),
+  DINOSAUR: Symbol("DINOSAUR"),
+  INSECT: Symbol("INSECT"),
+  PLANT: Symbol("PLANT"),
+  THUNDER: Symbol("THUNDER"),
+  ELECTRONIC: Symbol("ELECTRONIC"), // Não existe oficialmente
+  DIVINE_BEAST: Symbol("DIVINE_BEAST"),
+  WYRM: Symbol("WYRM"),
+  CYBERSE: Symbol("CYBERSE"),
+  PSYCHIC: Symbol("PSYCHIC"),
+  ILLUSION: Symbol("ILLUSION"),
+});
+
+export default MonsterRace;
