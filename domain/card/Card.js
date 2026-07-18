@@ -1,4 +1,4 @@
-import BaseEntity from "../base/BaseEntity";
+import BaseEntity from "../base/BaseEntity.js";
 
 class Card extends BaseEntity {
   constructor({
