@@ -35,6 +35,10 @@ class MonsterCard extends Card {
     this.attack = attack;
     this.defense = defense;
   }
+
+  getCardType() {
+    return CardType.MONSTER;
+  }
 }
 
 export default MonsterCard;

@@ -23,6 +23,10 @@ class Card extends BaseEntity {
     this.description = description;
     this.imageUrl = imageUrl;
   }
+
+  getCardType() {
+    throw new Error("Card type must be implemented");
+  }
 }
 
 export default Card;
