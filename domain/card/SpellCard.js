@@ -1,4 +1,5 @@
 import Card from "./Card.js";
+import CardType from "../enums/CardType.js";
 
 class SpellCard extends Card {
     constructor({

@@ -9,7 +9,7 @@ class Card extends BaseEntity {
     passcode,
     status,
     description,
-    imageUrl,
+    imageUrl
   }) {
     super({
       id,
