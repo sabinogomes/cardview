@@ -55,5 +55,3 @@ test("MonsterCard deve armazenar seus dados corretamente", () => {
   );
   assert.equal(card.imageUrl, "dark-magician.png");
 });
-
-console.log("✓ MonsterCard: tipo da carta está correto");
