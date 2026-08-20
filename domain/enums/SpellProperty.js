@@ -1,10 +1,10 @@
 const SpellProperty = Object.freeze({
-  NORMAL: Symbol("NORMAL"),
-  QUICK_PLAY: Symbol("QUICK_PLAY"),
-  CONTINUOUS: Symbol("CONTINUOUS"),
-  EQUIP: Symbol("EQUIP"),
-  FIELD: Symbol("FIELD"),
-  RITUAL: Symbol("RITUAL"),
+  NORMAL: "NORMAL",
+  QUICK_PLAY: "QUICK_PLAY",
+  CONTINUOUS: "CONTINUOUS",
+  EQUIP: "EQUIP",
+  FIELD: "FIELD",
+  RITUAL: "RITUAL",
 });
 
 export default SpellProperty;

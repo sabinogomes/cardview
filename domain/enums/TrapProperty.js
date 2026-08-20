@@ -1,7 +1,7 @@
 const TrapProperty = Object.freeze({
-  NORMAL: Symbol("NORMAL"),
-  CONTINUOUS: Symbol("CONTINUOUS"),
-  COUNTER: Symbol("COUNTER"),
+  NORMAL: "NORMAL",
+  CONTINUOUS: "CONTINUOUS",
+  COUNTER: "COUNTER",
 });
 
 export default TrapProperty;

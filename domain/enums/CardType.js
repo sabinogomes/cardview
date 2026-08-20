@@ -1,7 +1,7 @@
 const CardType = Object.freeze({
-    MONSTER: Symbol("MONSTER"),
-    SPELL: Symbol("SPELL"),
-    TRAP: Symbol("TRAP"),
+  MONSTER: "MONSTER",
+  SPELL: "SPELL",
+  TRAP: "TRAP",
 });
 
 export default CardType;
