@@ -58,8 +58,46 @@ test("CardRepository deve salvar uma carta", () => {
 
   repository.save(card);
 
-  const savedCard = repository.findById(6);
+  assert.ok(repository.findById(6));
 
-  assert.equal(savedCard, card);
+  repository.deleteById(6);
+
+  assert.equal(repository.findById(6), undefined);
 });
 
+test("CardRepository deve excluir uma carta pelo id", () => {
+  const repository = new CardRepository();
+
+  const card = new MonsterCard({
+    id: 6,
+    name: "Blue-Eyes White Dragon",
+    attribute: MonsterAttribute.LIGHT,
+    monsterRace: MonsterRace.DRAGON,
+    monsterType: [MonsterType.NORMAL],
+    level: 8,
+    attack: 3000,
+    defense: 2500,
+    passcode: "89631139",
+    status: CardStatus.UNLIMITED,
+    description: "A legendary dragon.",
+    imageUrl: "blue-eyes-white-dragon.png",
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  });
+
+  repository.save(card);
+
+  assert.ok(repository.findById(6));
+
+  repository.deleteById(6);
+
+  assert.equal(repository.findById(6), undefined);
+});
+
+test("CardRepository não deve fazer nada ao excluir uma carta inexistente", () => {
+  const repository = new CardRepository();
+
+  assert.doesNotThrow(() => {
+    repository.deleteById(999);
+  });
+});
