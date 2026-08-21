@@ -3,6 +3,12 @@ import { test } from "node:test";
 
 import CardRepository from "../repository/CardRepository.js";
 
+import MonsterCard from "../domain/card/MonsterCard.js";
+import MonsterAttribute from "../domain/enums/MonsterAttribute.js";
+import MonsterRace from "../domain/enums/MonsterRace.js";
+import MonsterType from "../domain/enums/MonsterType.js";
+import CardStatus from "../domain/enums/CardStatus.js";
+
 test("CardRepository deve encontrar uma carta pelo id", () => {
   const repository = new CardRepository();
 
